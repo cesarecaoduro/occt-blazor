@@ -9,8 +9,9 @@ namespace BlazorApp2.Services
 
         public OcctService(ILogger<OcctService> logger)
         {
-            _logger = logger;  
+            _logger = logger;
             Initialize();
+            _logger.LogInformation(Version);
         }
 
         [ModuleInitializer]

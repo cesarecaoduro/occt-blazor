@@ -7,7 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
 
-builder.Services.AddScoped<IOcctService, OcctService>();
+builder.Services.AddSingleton<IOcctService, OcctService>();
 string version = $"{Occt.Version.Major}.{Occt.Version.Minor}.{Occt.Version.Maintenance}";
 
 var app = builder.Build();

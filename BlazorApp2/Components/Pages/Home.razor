@@ -4,18 +4,16 @@
 <PageTitle>Home</PageTitle>
 
 <h1>Hello OCCT!</h1>
-<h2>Running OCCT version: @version</h2>
+<h2>Running OCCT version: @Version</h2>
 
 Welcome to your new app.
 
 @code {
-    string version = string.Empty;
+    [Parameter] public string Version { get; set; } = string.Empty;
 
-    protected override void OnAfterRender(bool firstRender)
+    protected override async Task OnInitializedAsync()
     {
-        if (firstRender)
-            return;
-        version = occtService.Version;
+        Version = occtService.Version;
     }
 
 }
