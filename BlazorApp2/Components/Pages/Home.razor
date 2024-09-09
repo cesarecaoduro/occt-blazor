@@ -1,0 +1,21 @@
+﻿@page "/"
+@inject IOcctService occtService
+
+<PageTitle>Home</PageTitle>
+
+<h1>Hello OCCT!</h1>
+<h2>Running OCCT version: @version</h2>
+
+Welcome to your new app.
+
+@code {
+    string version = string.Empty;
+
+    protected override void OnAfterRender(bool firstRender)
+    {
+        if (firstRender)
+            return;
+        version = occtService.Version;
+    }
+
+}
